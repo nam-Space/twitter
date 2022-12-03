@@ -1,0 +1,87 @@
+.who-follow-user-comment-all {
+    display: flex;
+    display: flex;
+    align-items: flex-start;
+    border-top: 1px solid var(--border-color);
+
+    .who-follow-user-comment-all-img {
+        height: 48px;
+        width: 48px;
+        margin-top: 6px;
+    }
+}
+
+.who-follow-user-comment-all-wrapper {
+    flex: 1;
+}
+
+.who-follow-user-comment {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 0 12px 0;
+    transition: all linear 0.1s;
+
+    &:hover .who-follow-user-comment-more {
+        opacity: 1;
+    }
+}
+
+.who-follow-user-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
+}
+
+.who-follow-user-text {
+    font-size: 1.4rem;
+    flex: 1;
+}
+
+.who-follow-user-text-wrapper {
+    display: flex;
+}
+
+.who-follow-user-text-wrapper .who-follow-user-text-name {
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+}
+
+.who-follow-user-text-wrapper .who-follow-user-text-content {
+    height: 16px;
+    width: 16px;
+    flex: 1;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.who-follow-user-text-interact {
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    color: #5c5c5c;
+    p + p {
+        margin-left: 10px;
+    }
+}
+
+.who-follow-user-text-interact-time {
+    font-size: 1.2rem;
+}
+
+.who-follow-user-text-interact-reply {
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.who-follow-user-comment-more {
+    width: 18px;
+    height: 18px;
+    opacity: 0;
+    transition: all linear 0.1s;
+    cursor: pointer;
+}

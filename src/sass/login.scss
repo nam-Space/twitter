@@ -1,0 +1,121 @@
+@import "./breakpoint.scss";
+
+.login-bg {
+    position: relative;
+    background-image: url("../assets/images/login.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 10%;
+    height: 100vh;
+    width: 100vw;
+}
+
+.login-form {
+    position: absolute;
+    width: 440px;
+    padding: 26px 20px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2rem;
+    background-color: rgb(190, 229, 243);
+
+    @include Mobile {
+        width: 80%;
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 3.2rem;
+
+        @include Mobile {
+            font-size: 2.2rem;
+        }
+    }
+
+    div {
+        margin-top: 14px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        input {
+            font-size: 1.8rem;
+            height: 46px;
+            width: 100%;
+            border-radius: 5px;
+            padding: 0 10px;
+            outline: none;
+            border: 1px solid #ccc;
+        }
+
+        input[type="file"] {
+            height: auto;
+            border: none;
+            display: none;
+        }
+
+        label {
+            font-size: 1.6rem;
+            height: 36px;
+            background-color: rgb(151, 237, 22);
+            padding: 0 5px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            .img-icon-login {
+                width: 42px;
+                height: 42px;
+                padding: 10px;
+                margin-top: 0;
+            }
+        }
+    }
+
+    .error {
+        margin-top: 6px;
+    }
+
+    button {
+        margin-top: 20px;
+        width: 60%;
+        height: 52px;
+        font-size: 2rem;
+        border-radius: 20px;
+        border: none;
+        background-color: var(--primary-color);
+        color: #fff;
+    }
+
+    section {
+        margin-top: 10px;
+        p {
+            font-size: 1.6rem;
+
+            @include Mobile {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            a {
+                margin-left: 5px;
+                text-decoration: none;
+                color: var(--primary-color);
+
+                &:hover {
+                    color: rgb(223, 4, 4);
+                }
+
+                @include Mobile {
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+}

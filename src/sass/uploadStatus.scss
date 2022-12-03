@@ -1,0 +1,117 @@
+@import "./breakpoint.scss";
+.status-wrapper {
+    margin-top: 52px;
+    padding: 16px;
+    display: flex;
+    align-items: flex-start;
+    border-bottom: 1px solid var(--border-color);
+
+    .status-wrapper-img {
+        width: 48px;
+        height: 48px;
+        margin-right: 16px;
+    }
+}
+
+.upload-wrapper {
+    flex: 1;
+}
+
+.access-modifier-btn {
+    height: 24px;
+    padding: 0 12px;
+    border: 1px solid #cfd9de;
+    background-color: transparent;
+    border-radius: 20px;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+
+    @include Mobile {
+        padding: 0 5px;
+    }
+}
+
+.arrow {
+    width: 16px;
+    height: 16px;
+}
+
+.access-modifier {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    p {
+        margin-right: 5px;
+    }
+}
+
+.status-input {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 2rem;
+}
+
+.status-input {
+    resize: none;
+    overflow: hidden;
+    border: none;
+    outline: none;
+    padding-top: 10px;
+}
+
+.image-review {
+    height: 80px;
+    width: 80px;
+    margin: 10px 0;
+    border-radius: unset;
+}
+
+.image-review.disable {
+    display: none;
+}
+
+.wrapper-upload-other {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--border-color);
+    padding-top: 16px;
+}
+
+.img-icon {
+    display: none;
+}
+
+.upload-status-img {
+    width: 34px;
+    height: 34px;
+    padding: 6px;
+    border-radius: 50%;
+    transition: all linear 0.15s;
+    cursor: pointer;
+}
+
+.upload-status-img:hover {
+    background-color: rgb(224, 243, 255);
+}
+
+.btn-upload-status {
+    height: 36px;
+    padding: 0 16px;
+    background-color: var(--primary-color);
+    color: #fff;
+    font-size: 1.6rem;
+    font-weight: 700;
+    border-radius: 20px;
+}
+
+.btn-upload-status.disable {
+    opacity: 0.5;
+    cursor: default;
+}
+
+.btn-upload-status.disable:hover {
+    filter: brightness(1);
+}

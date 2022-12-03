@@ -1,0 +1,60 @@
+.search-container {
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    border-radius: 20px;
+}
+
+.search-icon {
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+}
+
+.search-input {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 1.6rem;
+    height: 42px;
+    background-color: var(--border-color);
+    padding-left: 50px;
+    border-radius: 20px;
+}
+
+.search-input:focus {
+    outline: 1px solid var(--primary-color);
+}
+
+.seach-initial {
+    padding: 20px 12px 12px;
+    text-align: center;
+    color: #536471;
+}
+
+div [data-tippy-root] {
+    left: 0 !important;
+    // top: 0 !important;
+    right: 0 !important;
+    inset: initial;
+}
+
+.tippy-wrapper-all {
+    position: relative;
+}
+
+.tippy-box {
+    max-width: none !important;
+    // width: 374px;
+    border-radius: 10px;
+}
+
+.tippy-content {
+    padding: 0;
+}

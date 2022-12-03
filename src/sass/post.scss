@@ -1,0 +1,164 @@
+@import "./breakpoint.scss";
+
+.home-post {
+    padding: 12px 16px 0px;
+    font-size: 1.6rem;
+    display: flex;
+    border-bottom: 1px solid var(--border-color);
+
+    .home-post-user-avatar {
+        width: 48px;
+        height: 48px;
+    }
+}
+
+.home-post-status {
+    margin-left: 10px;
+    margin-top: 5px;
+    flex: 1;
+}
+
+.home-post-user {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.home-post-user-info {
+    display: flex;
+}
+
+.home-post-user-nickname {
+    @include Mobile {
+        display: none;
+    }
+}
+
+.home-post-user-username {
+    font-weight: 700;
+    margin-right: 10px;
+
+    @include Mobile {
+        margin-right: 5px;
+    }
+}
+
+.home-post-user p + p {
+    color: #536471;
+}
+
+.home-post-user-dot {
+    margin: 0 10px;
+
+    @include Mobile {
+        display: none;
+    }
+}
+
+.home-post-user-more-icon {
+    width: 18px;
+    height: 18px;
+}
+
+.home-post-user-content {
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.img-post {
+    margin-top: 10px;
+    width: 100%;
+    border-radius: 20px;
+}
+
+.home-post-render-interact {
+    display: flex;
+    height: 32px;
+    align-items: center;
+}
+
+.home-post-render-likes,
+.home-post-render-comment {
+    height: 100%;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    color: #536471;
+}
+
+.home-post-render-likes {
+    justify-content: flex-start;
+}
+
+.home-post-render-comment {
+    justify-content: flex-end;
+}
+
+.home-post-action {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 32px;
+    color: #536471;
+    border-top: 1px solid var(--border-color);
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    .home-post-like {
+        p {
+            @include Mobile {
+                display: none;
+            }
+        }
+    }
+
+    .home-post-comment {
+        p {
+            @include Mobile {
+                display: none;
+            }
+        }
+    }
+}
+
+.home-post-like,
+.home-post-comment {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    height: 100%;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all linear 0.15s;
+}
+
+.home-post-like:hover,
+.home-post-comment:hover {
+    background-color: rgb(241, 241, 241);
+}
+
+.home-post-like-icon,
+.home-post-comment-icon {
+    width: 18px;
+    height: 18px;
+    margin-right: 12px;
+
+    @include Mobile {
+        margin-right: 2px;
+    }
+}
+
+.like-text {
+    color: var(--like-color);
+}
+
+.home-post-comment-for-user {
+    display: none;
+}
+
+.home-post-comment-for-user.show {
+    display: block;
+}

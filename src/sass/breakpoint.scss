@@ -1,0 +1,35 @@
+@mixin PC_High_Resolution {
+    @media screen and (min-width: 80rem) {
+        @content;
+    }
+}
+
+@mixin PC {
+    @media screen and (min-width: 64rem) and (max-width: 79.938rem) {
+        @content;
+    }
+}
+
+@mixin Tablet {
+    @media screen and (min-width: 48rem) and (max-width: 63.938rem) {
+        @content;
+    }
+}
+
+@mixin Mobile {
+    @media screen and (max-width: 47.938rem) {
+        @content;
+    }
+}
+
+@mixin PC_and_Tablet {
+    @media screen and (min-width: 48rem) and (max-width: 79.938rem) {
+        @content;
+    }
+}
+
+@mixin Tablet_and_Mobile {
+    @media screen and (max-width: 63.938rem) {
+        @content;
+    }
+}
