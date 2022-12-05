@@ -150,6 +150,7 @@
     background-color: #b2b2b2;
     background-position: center;
     background-repeat: no-repeat;
+    // filter: brightness(70%);
     position: relative;
 
     @include Tablet {

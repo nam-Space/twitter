@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getUsers } from "../../../redux/thunk";
+import { getFollows, getUsers } from "../../../redux/thunk";
 
 import "../../../sass/explore.scss";
 import Search from "../../Search/Search";
@@ -9,6 +9,8 @@ import User from "../../User/User";
 const Explore = () => {
     const currentUser = JSON.parse(localStorage.getItem("currentUser"));
     const users = useSelector((state) => state.users);
+    const followings = useSelector((state) => state.followings);
+    const followers = useSelector((state) => state.followers);
 
     const filterUsers = users.filter(
         (user) => user.email !== currentUser?.email
@@ -18,7 +20,8 @@ const Explore = () => {
 
     useEffect(() => {
         dispatch(getUsers());
-    }, [users.length]);
+        dispatch(getFollows());
+    }, [users.length, followings.length, followers.length]);
 
     return (
         <div className="explore">

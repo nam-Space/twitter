@@ -227,7 +227,9 @@ const Sidebar = () => {
                                             <p className="user-info-signout-name">
                                                 {currentUser.user_name}
                                             </p>
-                                            <p>@{currentUser.nick_name}</p>
+                                            <p className="user-info-signout-name-nickname">
+                                                @{currentUser.nick_name}
+                                            </p>
                                         </div>
                                     </div>
                                     <div className="user-info-signout-icon">

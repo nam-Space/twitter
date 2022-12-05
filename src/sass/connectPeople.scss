@@ -10,10 +10,6 @@
     height: 100vh;
     width: 25%;
 
-    @include PC {
-        // width: 20%;
-    }
-
     @include Tablet {
         width: 35%;
         padding: 10px;

@@ -5,22 +5,21 @@
     background-color: #fff;
     margin-right: auto;
     flex: 1;
-    padding: 10px 80px 20px;
+    width: 25%;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    padding-right: 50px;
+    padding-left: calc(25% - 180px - 50px);
     font-size: 2rem;
     border-right: 1px solid var(--border-color);
     height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 25%;
-
-    @include PC {
-        padding: 10px 40px 20px;
-        align-items: center;
-    }
 
     @include Tablet_and_Mobile {
-        padding: 10px 10px 5px;
+        padding-left: 10px;
+        padding-right: 10px;
         width: max-content;
     }
 }
@@ -75,8 +74,6 @@
 .sidebar-tweet-btn-icon {
     display: none;
     div {
-        // width: 50px;
-        // height: 50px;
         padding: 15px;
     }
 
@@ -91,6 +88,14 @@
     background-color: #fff;
     padding: 5px;
     border-radius: 100px;
+}
+
+.sidebar-wrapper {
+    width: 180px;
+
+    @include Tablet_and_Mobile {
+        width: 60px;
+    }
 }
 
 .sidebar-wrapper:first-child
@@ -123,7 +128,6 @@
 
 .signout {
     font-size: 1.6rem;
-    // width: 300px;
     padding: 5px;
     cursor: pointer;
 
@@ -147,7 +151,7 @@
 }
 
 .user-info-signout {
-    margin-right: 20px;
+    margin-right: 10px;
     display: flex;
 
     @include PC_and_Tablet {
@@ -186,6 +190,10 @@
 
         .user-info-signout-name {
             font-weight: bold;
+        }
+
+        .user-info-signout-name-nickname {
+            font-size: 1.4rem;
         }
     }
 }
