@@ -34,28 +34,30 @@ const User = ({ res }) => {
     useEffect(() => {
         dispatch(getUsers());
         dispatch(getFollows());
-    }, [users.length, followings.length, followers.length]);
+    }, [users.length, followings.length, followers.length, res?.id]);
 
     const handleFollow = (action, e) => {
         e.stopPropagation();
         if (!currentUser?.id) {
             navigate("/login");
         } else {
-            if (action === "follow") {
-                dispatch(
-                    setFollow({
-                        user_id: currentUser?.id,
-                        user_id_following: res?.id,
-                    })
-                );
-            } else {
-                dispatch(
-                    unFollow({
-                        id_following: followingUser?.id,
-                        id_follower: followerUser?.id,
-                    })
-                );
-            }
+            setTimeout(() => {
+                if (action === "follow") {
+                    dispatch(
+                        setFollow({
+                            user_id: currentUser?.id,
+                            user_id_following: res?.id,
+                        })
+                    );
+                } else {
+                    dispatch(
+                        unFollow({
+                            id_following: followingUser?.id,
+                            id_follower: followerUser?.id,
+                        })
+                    );
+                }
+            }, 500);
         }
     };
 
@@ -81,8 +83,8 @@ const User = ({ res }) => {
                     <p>{res?.nick_name}</p>
                 </div>
                 {currentUser?.email !== res?.email ? (
-                    res?.id === followerUser?.user_id &&
-                    currentUser?.id === followerUser?.user_id_follower ? (
+                    res?.id === followingUser?.user_id_following &&
+                    currentUser?.id === followingUser?.user_id ? (
                         <button
                             className="unfollow-btn"
                             onClick={(e) => handleFollow("unfollow", e)}

@@ -208,17 +208,21 @@ export const setFollow = (payload) => {
                 `http://localhost:3001/followings`,
                 following
             );
+
             const resFollower = await axios.post(
                 `http://localhost:3001/followers`,
                 follower
             );
 
-            dispatch({
+            console.log(resFollowing, resFollower);
+
+            await dispatch({
                 type: SET_FOLLOW,
                 payload: payload,
             });
         } catch (error) {
             console.log(error);
+            alert("Bạn bấm quá nhanh! Vui lòng reload lại trang rồi thử lại");
         }
     };
 };
@@ -249,6 +253,7 @@ export const unFollow = (payload) => {
             });
         } catch (error) {
             console.log(error);
+            alert("Bạn bấm quá nhanh! Vui lòng reload lại trang rồi thử lại");
         }
     };
 };
