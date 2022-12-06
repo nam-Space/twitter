@@ -26,6 +26,10 @@
 
 .home-post-user-info {
     display: flex;
+
+    @include Tablet_and_Mobile {
+        flex-direction: column;
+    }
 }
 
 .home-post-user-nickname {

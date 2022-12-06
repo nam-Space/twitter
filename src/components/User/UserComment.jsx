@@ -34,7 +34,7 @@ const UserComment = ({ comment, users }) => {
                         </div>
                     </div>
                     <div className="who-follow-user-comment-more">
-                        <More width={24} height={24} color="#535353" />
+                        <More color="#535353" />
                     </div>
                 </div>
             </div>

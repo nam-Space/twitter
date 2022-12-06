@@ -56,7 +56,7 @@ const Search = () => {
             >
                 <div className="search-container">
                     <div className="search-icon">
-                        <Explore height={24} width={24} />
+                        <Explore />
                     </div>
 
                     <input

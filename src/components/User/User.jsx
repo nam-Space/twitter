@@ -73,11 +73,7 @@ const User = ({ res }) => {
                     <div className="who-follow-user-text-name">
                         <p>{res?.user_name}</p>
                         <span>
-                            <CheckUser
-                                height={24}
-                                width={24}
-                                color="var(--primary-color)"
-                            />
+                            <CheckUser color="var(--primary-color)" />
                         </span>
                     </div>
                     <p>{res?.nick_name}</p>

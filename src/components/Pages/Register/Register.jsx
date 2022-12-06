@@ -212,7 +212,7 @@ const Register = () => {
                         />
                         <label htmlFor="img" className="choose-img">
                             <div className="img-icon-login">
-                                <ImageIcon width={24} height={24} />
+                                <ImageIcon />
                             </div>
                             <span>Chọn Ảnh (không bắt buộc)</span>
                         </label>

@@ -89,11 +89,7 @@ const UploadStatus = () => {
                     <div className="access-modifier">
                         <p>Everyone</p>
                         <div className="arrow">
-                            <ArrowDown
-                                height={24}
-                                width={24}
-                                color="var(--primary-color)"
-                            />
+                            <ArrowDown color="var(--primary-color)" />
                         </div>
                     </div>
                 </button>
@@ -119,11 +115,7 @@ const UploadStatus = () => {
                         onChange={handleChange}
                     />
                     <label htmlFor="img-icon" className="upload-status-img">
-                        <ImageIcon
-                            height={24}
-                            width={24}
-                            color="var(--primary-color)"
-                        />
+                        <ImageIcon color="var(--primary-color)" />
                     </label>
                     <button
                         className="btn-upload-status disable"

@@ -87,7 +87,7 @@ const Post = ({ post }) => {
                         <p>{formatDate(post.time)}</p>
                     </div>
                     <div className="home-post-user-more-icon">
-                        <More width={24} height={24} color="#536471" />
+                        <More color="#536471" />
                     </div>
                 </div>
                 <p className="home-post-user-content">{post.title}</p>
@@ -112,13 +112,9 @@ const Post = ({ post }) => {
                     <div className="home-post-like" onClick={handleLike}>
                         <div className="home-post-like-icon">
                             {likeSelected ? (
-                                <HeartBold
-                                    width={24}
-                                    height={24}
-                                    color="var(--like-color)"
-                                />
+                                <HeartBold color="var(--like-color)" />
                             ) : (
-                                <Heart width={24} height={24} />
+                                <Heart />
                             )}
                         </div>
                         <p className={likeSelected ? "like-text" : ""}>Like</p>
@@ -128,7 +124,7 @@ const Post = ({ post }) => {
                         onClick={handleShowComment}
                     >
                         <div className="home-post-comment-icon">
-                            <Comment width={24} height={24} />
+                            <Comment />
                         </div>
                         <p>Comment</p>
                     </div>

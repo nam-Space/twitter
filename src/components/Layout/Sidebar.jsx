@@ -1,4 +1,4 @@
-import React, { memo, useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import {
     ExploreBold,
@@ -66,8 +66,6 @@ const Sidebar = () => {
                     <Link to="/" className="link">
                         <Twitter
                             className="sidebar-icon"
-                            width={24}
-                            height={24}
                             color={"var(--primary-color)"}
                         />
                     </Link>
@@ -77,20 +75,12 @@ const Sidebar = () => {
                         {({ isActive }) =>
                             isActive ? (
                                 <>
-                                    <HomeBold
-                                        className="sidebar-icon"
-                                        width={24}
-                                        height={24}
-                                    />
+                                    <HomeBold className="sidebar-icon" />
                                     <p>Home</p>
                                 </>
                             ) : (
                                 <>
-                                    <Home
-                                        className="sidebar-icon"
-                                        width={24}
-                                        height={24}
-                                    />
+                                    <Home className="sidebar-icon" />
                                     <p>Home</p>
                                 </>
                             )
@@ -102,20 +92,12 @@ const Sidebar = () => {
                         {({ isActive }) =>
                             isActive ? (
                                 <>
-                                    <ExploreBold
-                                        className="sidebar-icon"
-                                        width={24}
-                                        height={24}
-                                    />
+                                    <ExploreBold className="sidebar-icon" />
                                     <p>Explore</p>
                                 </>
                             ) : (
                                 <>
-                                    <Explore
-                                        className="sidebar-icon"
-                                        width={24}
-                                        height={24}
-                                    />
+                                    <Explore className="sidebar-icon" />
                                     <p>Explore</p>
                                 </>
                             )
@@ -131,20 +113,12 @@ const Sidebar = () => {
                             {({ isActive }) =>
                                 isActive ? (
                                     <>
-                                        <ProfileBold
-                                            className="sidebar-icon"
-                                            width={24}
-                                            height={24}
-                                        />
+                                        <ProfileBold className="sidebar-icon" />
                                         <p>Profile</p>
                                     </>
                                 ) : (
                                     <>
-                                        <Profile
-                                            className="sidebar-icon"
-                                            width={24}
-                                            height={24}
-                                        />
+                                        <Profile className="sidebar-icon" />
                                         <p>Profile</p>
                                     </>
                                 )
@@ -165,7 +139,7 @@ const Sidebar = () => {
                             onClick={handleUploadStatus}
                         >
                             <div>
-                                <Tweet width={24} height={24} color="#fff" />
+                                <Tweet color="#fff" />
                             </div>
                         </button>
                         <Modal
@@ -191,7 +165,7 @@ const Sidebar = () => {
                                 className="sidebar-tweet-btn-upload"
                                 onClick={closeModalUploadStatus}
                             >
-                                <Close height={24} width={24} color="#000" />
+                                <Close color="#000" />
                             </button>
                             <UploadStatusSidebar
                                 closeModalUploadStatus={closeModalUploadStatus}
@@ -233,7 +207,7 @@ const Sidebar = () => {
                                         </div>
                                     </div>
                                     <div className="user-info-signout-icon">
-                                        <More width={24} height={24} />
+                                        <More />
                                     </div>
                                 </div>
                             </div>

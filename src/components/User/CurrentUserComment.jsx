@@ -73,11 +73,7 @@ const CurrentUserComment = ({ post, user, action, writeResponseRef }) => {
                             onChange={handleChange}
                         />
                         <label htmlFor="img-icon-comment">
-                            <ImageIcon
-                                height={24}
-                                width={24}
-                                color="var(--primary-color)"
-                            />
+                            <ImageIcon color="var(--primary-color)" />
                         </label>
                     </div>
                 </div>

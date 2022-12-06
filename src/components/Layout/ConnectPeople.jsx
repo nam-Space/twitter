@@ -4,7 +4,6 @@ import { Link, useLocation } from "react-router-dom";
 import { getUsers } from "../../redux/thunk";
 
 import "../../sass/connectPeople.scss";
-import Img from "../Img/Img";
 import Search from "../Search/Search";
 import User from "../User/User";
 
@@ -21,7 +20,7 @@ const ConnectPeople = () => {
 
     useEffect(() => {
         dispatch(getUsers());
-    }, []);
+    }, [users.length]);
 
     return (
         <div className="connect-people">

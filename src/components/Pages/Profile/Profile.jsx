@@ -232,11 +232,7 @@ const Profile = () => {
                                                 className="edit-profile-btn-close"
                                                 onClick={closeModalEditProfile}
                                             >
-                                                <Close
-                                                    height={24}
-                                                    width={24}
-                                                    color="#000"
-                                                />
+                                                <Close color="#000" />
                                             </button>
                                             <div className="edit-profile-save">
                                                 <p>Edit Profile</p>
@@ -267,11 +263,7 @@ const Profile = () => {
                                                 htmlFor="img-bg-user"
                                                 className="edit-modal-bg-btn"
                                             >
-                                                <Picture
-                                                    width={24}
-                                                    height={24}
-                                                    color="#fff"
-                                                />
+                                                <Picture color="#fff" />
                                             </label>
                                             <span>
                                                 <img
@@ -294,11 +286,7 @@ const Profile = () => {
                                                     htmlFor="img-edit-avatar"
                                                     className="edit-modal-bg-btn"
                                                 >
-                                                    <Picture
-                                                        width={24}
-                                                        height={24}
-                                                        color="#fff"
-                                                    />
+                                                    <Picture color="#fff" />
                                                 </label>
                                             </span>
                                         </div>
@@ -347,11 +335,7 @@ const Profile = () => {
                         </p>
                         <div className="profile-info-created">
                             <div className="profile-info-created-icon">
-                                <Calendar
-                                    width={24}
-                                    height={24}
-                                    color="#536471"
-                                />
+                                <Calendar color="#536471" />
                             </div>
                             {formatDate(user?.date_register)}
                         </div>

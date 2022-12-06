@@ -1,6 +1,6 @@
-export const HomeBold = ({ width, height, color, className }) => (
+export const HomeBold = ({ color, className }) => (
     <svg
-        viewBox={`0 0 ${width} ${height}`}
+        viewBox={`0 0 24 24`}
         fill={color}
         aria-hidden="true"
         className={`${className} r-18jsvk2 r-4qtqp9 r-yyyyoo r-lwhw9o r-dnmrzs r-bnwqim r-1plcrui r-lrvibr r-cnnz9e`}
@@ -11,9 +11,9 @@ export const HomeBold = ({ width, height, color, className }) => (
     </svg>
 );
 
-export const ExploreBold = ({ width, height, color, className }) => (
+export const ExploreBold = ({ color, className }) => (
     <svg
-        viewBox={`0 0 ${width} ${height}`}
+        viewBox={`0 0 24 24`}
         fill={color}
         aria-hidden="true"
         className={`${className} r-18jsvk2 r-4qtqp9 r-yyyyoo r-lwhw9o r-dnmrzs r-bnwqim r-1plcrui r-lrvibr r-cnnz9e`}
@@ -24,9 +24,9 @@ export const ExploreBold = ({ width, height, color, className }) => (
     </svg>
 );
 
-export const ProfileBold = ({ width, height, color, className }) => (
+export const ProfileBold = ({ color, className }) => (
     <svg
-        viewBox={`0 0 ${width} ${height}`}
+        viewBox={`0 0 24 24`}
         fill={color}
         aria-hidden="true"
         className={`${className} r-18jsvk2 r-4qtqp9 r-yyyyoo r-lwhw9o r-dnmrzs r-bnwqim r-1plcrui r-lrvibr r-cnnz9e`}
@@ -37,9 +37,9 @@ export const ProfileBold = ({ width, height, color, className }) => (
     </svg>
 );
 
-export const HeartBold = ({ width, height, color, className }) => (
+export const HeartBold = ({ color, className }) => (
     <svg
-        viewBox={`0 0 ${width} ${height}`}
+        viewBox={`0 0 24 24`}
         fill={color}
         aria-hidden="true"
         className={`${className} r-4qtqp9 r-yyyyoo r-1xvli5t r-dnmrzs r-bnwqim r-1plcrui r-lrvibr r-1hdv0qi`}

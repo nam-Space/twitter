@@ -1,6 +1,6 @@
-export const Twitter = ({ width, height, color, className }) => (
+export const Twitter = ({ color, className }) => (
     <svg
-        viewBox={`0 0 ${width} ${height}`}
+        viewBox={`0 0 24 24`}
         fill={color}
         aria-hidden="true"
         className={`${className}  r-1cvl2hr r-4qtqp9 r-yyyyoo r-16y2uox r-8kz0gk r-dnmrzs r-bnwqim r-1plcrui r-lrvibr r-lrsllp`}
@@ -11,9 +11,9 @@ export const Twitter = ({ width, height, color, className }) => (
     </svg>
 );
 
-export const Home = ({ width, height, color, className }) => (
+export const Home = ({ color, className }) => (
     <svg
-        viewBox={`0 0 ${width} ${height}`}
+        viewBox={`0 0 24 24`}
         fill={color}
         aria-hidden="true"
         className={`${className} r-18jsvk2 r-4qtqp9 r-yyyyoo r-lwhw9o r-dnmrzs r-bnwqim r-1plcrui r-lrvibr r-cnnz9e`}
@@ -24,9 +24,9 @@ export const Home = ({ width, height, color, className }) => (
     </svg>
 );
 
-export const Explore = ({ width, height, color, className }) => (
+export const Explore = ({ color, className }) => (
     <svg
-        viewBox={`0 0 ${width} ${height}`}
+        viewBox={`0 0 24 24`}
         fill={color}
         aria-hidden="true"
         className={`${className} r-18jsvk2 r-4qtqp9 r-yyyyoo r-lwhw9o r-dnmrzs r-bnwqim r-1plcrui r-lrvibr r-cnnz9e`}
@@ -37,9 +37,9 @@ export const Explore = ({ width, height, color, className }) => (
     </svg>
 );
 
-export const Profile = ({ width, height, color, className }) => (
+export const Profile = ({ color, className }) => (
     <svg
-        viewBox={`0 0 ${width} ${height}`}
+        viewBox={`0 0 24 24`}
         fill={color}
         aria-hidden="true"
         className={`${className} r-18jsvk2 r-4qtqp9 r-yyyyoo r-lwhw9o r-dnmrzs r-bnwqim r-1plcrui r-lrvibr r-cnnz9e`}
@@ -50,9 +50,9 @@ export const Profile = ({ width, height, color, className }) => (
     </svg>
 );
 
-export const Close = ({ width, height, color, className }) => (
+export const Close = ({ color, className }) => (
     <svg
-        viewBox={`0 0 ${width} ${height}`}
+        viewBox={`0 0 24 24`}
         fill={color}
         aria-hidden="true"
         className={`${className} r-18jsvk2 r-4qtqp9 r-yyyyoo r-z80fyv r-dnmrzs r-bnwqim r-1plcrui r-lrvibr r-19wmn03`}
@@ -63,9 +63,9 @@ export const Close = ({ width, height, color, className }) => (
     </svg>
 );
 
-export const More = ({ width, height, color, className }) => (
+export const More = ({ color, className }) => (
     <svg
-        viewBox={`0 0 ${width} ${height}`}
+        viewBox={`0 0 24 24`}
         fill={color}
         aria-hidden="true"
         className={`${className} r-18jsvk2 r-4qtqp9 r-yyyyoo r-1xvli5t r-dnmrzs r-bnwqim r-1plcrui r-lrvibr`}
@@ -76,9 +76,9 @@ export const More = ({ width, height, color, className }) => (
     </svg>
 );
 
-export const ArrowDown = ({ width, height, color, className }) => (
+export const ArrowDown = ({ color, className }) => (
     <svg
-        viewBox={`0 0 ${width} ${height}`}
+        viewBox={`0 0 24 24`}
         fill={color}
         aria-hidden="true"
         className={`${className} r-4qtqp9 r-yyyyoo r-10ptun7 r-13hce6t r-dnmrzs r-bnwqim r-1plcrui r-lrvibr r-1janqcz`}
@@ -89,9 +89,9 @@ export const ArrowDown = ({ width, height, color, className }) => (
     </svg>
 );
 
-export const ImageIcon = ({ width, height, color, className }) => (
+export const ImageIcon = ({ color, className }) => (
     <svg
-        viewBox={`0 0 ${width} ${height}`}
+        viewBox={`0 0 24 24`}
         fill={color}
         aria-hidden="true"
         className={`${className} r-1cvl2hr r-4qtqp9 r-yyyyoo r-z80fyv r-dnmrzs r-bnwqim r-1plcrui r-lrvibr r-19wmn03`}
@@ -102,9 +102,9 @@ export const ImageIcon = ({ width, height, color, className }) => (
     </svg>
 );
 
-export const CheckUser = ({ width, height, color, className }) => (
+export const CheckUser = ({ color, className }) => (
     <svg
-        viewBox={`0 0 ${width} ${height}`}
+        viewBox={`0 0 24 24`}
         fill={color}
         aria-label="Verified account"
         role="img"
@@ -116,9 +116,9 @@ export const CheckUser = ({ width, height, color, className }) => (
     </svg>
 );
 
-export const Calendar = ({ width, height, color, className }) => (
+export const Calendar = ({ color, className }) => (
     <svg
-        viewBox={`0 0 ${width} ${height}`}
+        viewBox={`0 0 24 24`}
         fill={color}
         aria-hidden="true"
         className={`${className} r-14j79pv r-4qtqp9 r-yyyyoo r-1xvli5t r-1d4mawv r-dnmrzs r-bnwqim r-1plcrui r-lrvibr`}
@@ -129,9 +129,9 @@ export const Calendar = ({ width, height, color, className }) => (
     </svg>
 );
 
-export const Heart = ({ width, height, color, className }) => (
+export const Heart = ({ color, className }) => (
     <svg
-        viewBox={`0 0 ${width} ${height}`}
+        viewBox={`0 0 24 24`}
         fill={color}
         aria-hidden="true"
         className={`${className} r-4qtqp9 r-yyyyoo r-1xvli5t r-dnmrzs r-bnwqim r-1plcrui r-lrvibr r-1hdv0qi`}
@@ -142,9 +142,9 @@ export const Heart = ({ width, height, color, className }) => (
     </svg>
 );
 
-export const Comment = ({ width, height, color, className }) => (
+export const Comment = ({ color, className }) => (
     <svg
-        viewBox={`0 0 ${width} ${height}`}
+        viewBox={`0 0 24 24`}
         fill={color}
         aria-hidden="true"
         className={`${className} r-4qtqp9 r-yyyyoo r-1xvli5t r-dnmrzs r-bnwqim r-1plcrui r-lrvibr r-1hdv0qi`}
@@ -155,9 +155,9 @@ export const Comment = ({ width, height, color, className }) => (
     </svg>
 );
 
-export const Picture = ({ width, height, color, className }) => (
+export const Picture = ({ color, className }) => (
     <svg
-        viewBox={`0 0 ${width} ${height}`}
+        viewBox={`0 0 24 24`}
         fill={color}
         aria-hidden="true"
         className={`${className} r-jwli3a r-4qtqp9 r-yyyyoo r-18yzcnr r-dnmrzs r-bnwqim r-1plcrui r-lrvibr r-yc9v9c`}
@@ -168,9 +168,9 @@ export const Picture = ({ width, height, color, className }) => (
     </svg>
 );
 
-export const Tweet = ({ width, height, color, className }) => (
+export const Tweet = ({ color, className }) => (
     <svg
-        viewBox={`0 0 ${width} ${height}`}
+        viewBox={`0 0 24 24`}
         fill={color}
         aria-hidden="true"
         className={`${className} r-jwli3a r-4qtqp9 r-yyyyoo r-1472mwg r-dnmrzs r-bnwqim r-1plcrui r-lrvibr r-lrsllp`}
