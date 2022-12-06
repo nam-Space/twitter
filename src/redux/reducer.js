@@ -19,7 +19,6 @@ const initialState = {
     users: [],
     posts: [],
     followings: [],
-    followers: [],
     likes: [],
     comments: [],
 };
@@ -93,8 +92,7 @@ const rootReducer = (state = initialState, action) => {
         case GET_FOLLOWS:
             return {
                 ...state,
-                followings: action.payload.resFollowings,
-                followers: action.payload.resFollowers,
+                followings: action.payload,
             };
 
         case SET_FOLLOW:
@@ -103,29 +101,19 @@ const rootReducer = (state = initialState, action) => {
                 user_id_following: action.payload.user_id_following,
             };
 
-            const followerUserResult = {
-                user_id: action.payload.user_id_following,
-                user_id_follower: action.payload.user_id,
-            };
-
             return {
                 ...state,
                 followings: [...state.followings, followingResult],
-                followers: [...state.followers, followerUserResult],
             };
 
         case UN_FOLLOW:
             const filterFollowings = state.followings.filter(
-                (follow) => follow.id !== action.payload.id_following
-            );
-            const filterFollowers = state.followers.filter(
-                (follow) => follow.id !== action.payload.id_follower
+                (follow) => follow.id !== action.payload
             );
 
             return {
                 ...state,
                 followings: filterFollowings,
-                followers: filterFollowers,
             };
 
         default:

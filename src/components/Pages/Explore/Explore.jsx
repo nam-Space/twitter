@@ -10,7 +10,6 @@ const Explore = () => {
     const currentUser = JSON.parse(localStorage.getItem("currentUser"));
     const users = useSelector((state) => state.users);
     const followings = useSelector((state) => state.followings);
-    const followers = useSelector((state) => state.followers);
 
     const filterUsers = users.filter(
         (user) => user.email !== currentUser?.email
@@ -21,7 +20,7 @@ const Explore = () => {
     useEffect(() => {
         dispatch(getUsers());
         dispatch(getFollows());
-    }, [users.length, followings.length, followers.length]);
+    }, [users.length, followings.length]);
 
     return (
         <div className="explore">

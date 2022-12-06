@@ -59,7 +59,7 @@ const CurrentUserComment = ({ post, user, action, writeResponseRef }) => {
                     <textarea
                         className="current-user-comment-input"
                         type="text"
-                        placeholder="Write your comment..."
+                        placeholder="Write something..."
                         onKeyDown={handleSubmit}
                         value={inputValue}
                         onChange={handleChange}

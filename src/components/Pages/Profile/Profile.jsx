@@ -26,30 +26,19 @@ const Profile = () => {
     const user = users.find((user) => user.id === Number(id));
     currentUser = users.find((user) => user.email === currentUser?.email);
     const followings = useSelector((state) => state.followings);
-    const followers = useSelector((state) => state.followers);
     const posts = useSelector((state) => state.posts);
 
     const userFollowings = followings.filter(
-        (following) => following.user_id === Number(id)
+        (follow) => follow.user_id === Number(id)
     );
-    const userFollowers = followers.filter(
-        (follower) => follower.user_id === Number(id)
-    );
-    const selectedUserFollow = followers.find(
-        (follower) =>
-            follower.user_id === Number(id) &&
-            follower.user_id_follower === currentUser?.id
+    const userFollowers = followings.filter(
+        (follow) => follow.user_id_following === Number(id)
     );
 
-    const followingUserDatabase = followings.find(
-        (following) =>
-            following.user_id === currentUser?.id &&
-            following.user_id_following === user.id
-    );
-    const followerUserDatabase = followers.find(
-        (follower) =>
-            follower.user_id === user.id &&
-            follower.user_id_follower === currentUser?.id
+    const selectedUserFollow = followings.find(
+        (follow) =>
+            follow.user_id === currentUser?.id &&
+            follow.user_id_following === Number(id)
     );
 
     const userPosts = posts.filter((post) => post.user_id === Number(id));
@@ -59,12 +48,7 @@ const Profile = () => {
 
     const handleFollow = (action) => {
         if (action === "unfollow") {
-            dispatch(
-                unFollow({
-                    id_following: followingUserDatabase.id,
-                    id_follower: followerUserDatabase.id,
-                })
-            );
+            dispatch(unFollow(selectedUserFollow?.id));
         } else {
             dispatch(
                 setFollow({
@@ -145,7 +129,6 @@ const Profile = () => {
         userFollowings.length,
         userFollowers.length,
         followings.length,
-        followers.length,
         currentUser?.user_name,
         currentUser?.background_url,
         currentUser?.user_img,
@@ -308,9 +291,9 @@ const Profile = () => {
                                     </div>
                                 </Modal>
                             </>
-                        ) : selectedUserFollow?.user_id === user?.id &&
-                          selectedUserFollow?.user_id_follower ===
-                              currentUser?.id ? (
+                        ) : selectedUserFollow?.user_id === currentUser?.id &&
+                          selectedUserFollow?.user_id_following ===
+                              Number(id) ? (
                             <button
                                 className="unfollow-btn"
                                 onClick={() => handleFollow("unfollow")}

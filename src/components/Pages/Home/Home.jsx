@@ -12,7 +12,6 @@ const Home = () => {
 
     const posts = useSelector((state) => state.posts);
     const followings = useSelector((state) => state.followings);
-    const followers = useSelector((state) => state.followers);
 
     const navigate = useNavigate();
 
@@ -25,7 +24,7 @@ const Home = () => {
         if (!currentUser) {
             navigate("/login");
         }
-    }, [posts.length, followings.length, followers.length]);
+    }, [posts.length, followings?.length]);
 
     return (
         <div className="home">

@@ -12,7 +12,6 @@ const User = ({ res }) => {
 
     const users = useSelector((state) => state.users);
     const followings = useSelector((state) => state.followings);
-    const followers = useSelector((state) => state.followers);
 
     currentUser = users.find((user) => user.email === currentUser?.email);
 
@@ -22,42 +21,29 @@ const User = ({ res }) => {
             following.user_id_following === res?.id
     );
 
-    const followerUser = followers.find(
-        (follower) =>
-            follower.user_id === res?.id &&
-            follower.user_id_follower === currentUser?.id
-    );
-
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
     useEffect(() => {
         dispatch(getUsers());
         dispatch(getFollows());
-    }, [users.length, followings.length, followers.length, res?.id]);
+    }, [users.length, followings.length]);
 
     const handleFollow = (action, e) => {
         e.stopPropagation();
         if (!currentUser?.id) {
             navigate("/login");
         } else {
-            setTimeout(() => {
-                if (action === "follow") {
-                    dispatch(
-                        setFollow({
-                            user_id: currentUser?.id,
-                            user_id_following: res?.id,
-                        })
-                    );
-                } else {
-                    dispatch(
-                        unFollow({
-                            id_following: followingUser?.id,
-                            id_follower: followerUser?.id,
-                        })
-                    );
-                }
-            }, 500);
+            if (action === "follow") {
+                dispatch(
+                    setFollow({
+                        user_id: currentUser?.id,
+                        user_id_following: res?.id,
+                    })
+                );
+            } else {
+                dispatch(unFollow(followingUser?.id));
+            }
         }
     };
 

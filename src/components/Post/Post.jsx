@@ -110,6 +110,9 @@ const Post = ({ post }) => {
                 ) : null}
                 <div className="home-post-action">
                     <div className="home-post-like" onClick={handleLike}>
+                        {postLikes.length > 0 && (
+                            <span>{postLikes.length}</span>
+                        )}
                         <div className="home-post-like-icon">
                             {likeSelected ? (
                                 <HeartBold color="var(--like-color)" />
@@ -123,6 +126,9 @@ const Post = ({ post }) => {
                         className="home-post-comment"
                         onClick={handleShowComment}
                     >
+                        {quantityComments.length > 0 && (
+                            <span>{quantityComments.length}</span>
+                        )}
                         <div className="home-post-comment-icon">
                             <Comment />
                         </div>

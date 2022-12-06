@@ -19,7 +19,7 @@ const Search = () => {
 
     useEffect(() => {
         dispatch(getUsers());
-    }, []);
+    }, [users.length]);
 
     const handleSearch = (e) => {
         setSearchValue(e.target.value);

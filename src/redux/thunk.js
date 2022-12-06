@@ -172,18 +172,10 @@ export const getComments = () => {
 export const getFollows = () => {
     return async (dispatch) => {
         try {
-            const resFollowings = await axios.get(
-                `http://localhost:3001/followings`
-            );
-            const resFollowers = await axios.get(
-                `http://localhost:3001/followers`
-            );
+            const res = await axios.get(`http://localhost:3001/followings`);
             dispatch({
                 type: GET_FOLLOWS,
-                payload: {
-                    resFollowings: resFollowings.data,
-                    resFollowers: resFollowers.data,
-                },
+                payload: res.data,
             });
         } catch (error) {
             console.log(error);
@@ -194,31 +186,14 @@ export const getFollows = () => {
 export const setFollow = (payload) => {
     return async (dispatch) => {
         try {
-            const following = {
-                user_id: payload.user_id,
-                user_id_following: payload.user_id_following,
-            };
-
-            const follower = {
-                user_id: payload.user_id_following,
-                user_id_follower: payload.user_id,
-            };
-
-            const resFollowing = await axios.post(
+            const res = await axios.post(
                 `http://localhost:3001/followings`,
-                following
+                payload
             );
 
-            const resFollower = await axios.post(
-                `http://localhost:3001/followers`,
-                follower
-            );
-
-            console.log(resFollowing, resFollower);
-
-            await dispatch({
+            dispatch({
                 type: SET_FOLLOW,
-                payload: payload,
+                payload,
             });
         } catch (error) {
             console.log(error);
@@ -227,29 +202,16 @@ export const setFollow = (payload) => {
     };
 };
 
-export const unFollow = (payload) => {
+export const unFollow = (id) => {
     return async (dispatch) => {
         try {
-            // const following = {
-            //     user_id: payload.user_id,
-            //     user_id_following: payload.user_id_following,
-            // };
-
-            // const follower = {
-            //     user_id: payload.user_id_following,
-            //     user_id_follower: payload.user_id,
-            // };
-
-            const resFollowing = await axios.delete(
-                `http://localhost:3001/followings/${payload.id_following}`
-            );
-            const resFollower = await axios.delete(
-                `http://localhost:3001/followers/${payload.id_follower}`
+            const res = await axios.delete(
+                `http://localhost:3001/followings/${id}`
             );
 
             dispatch({
                 type: UN_FOLLOW,
-                payload,
+                payload: id,
             });
         } catch (error) {
             console.log(error);
