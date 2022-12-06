@@ -66,9 +66,14 @@ const Post = ({ post }) => {
 
     return (
         <div className="home-post">
-            <Link to={`/profile/${post?.user_id}`}>
-                <Img url={post.avatar_url} className="home-post-user-avatar" />
-            </Link>
+            <div>
+                <Link to={`/profile/${post?.user_id}`}>
+                    <Img
+                        url={post.avatar_url}
+                        className="home-post-user-avatar"
+                    />
+                </Link>
+            </div>
             <div className="home-post-status">
                 <div className="home-post-user">
                     <div className="home-post-user-info">

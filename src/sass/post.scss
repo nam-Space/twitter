@@ -72,6 +72,13 @@
 .home-post-user-content {
     margin-top: 5px;
     margin-bottom: 10px;
+
+    // Xuống dòng khi text quá dài
+    overflow-wrap: anywhere;
+
+    @include Mobile {
+        margin-top: 10px;
+    }
 }
 
 .img-post {
@@ -119,6 +126,11 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+
+    @include Mobile {
+        height: 42px;
+    }
+
     .home-post-like {
         span {
             display: none;
@@ -178,6 +190,8 @@
 
     @include Mobile {
         margin-right: 2px;
+        width: 22px;
+        height: 22px;
     }
 }
 

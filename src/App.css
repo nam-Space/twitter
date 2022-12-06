@@ -41,3 +41,13 @@ a {
     text-decoration: none;
     color: #000;
 }
+
+textarea {
+    text-overflow: ellipsis;
+}
+
+textarea::placeholder {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}

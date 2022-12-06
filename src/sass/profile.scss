@@ -143,6 +143,11 @@
     height: 32px;
     padding: 0 16px;
     border-radius: 20px;
+
+    @include Mobile {
+        height: 46px;
+        border-radius: 10px;
+    }
 }
 
 .edit-modal-bg {
@@ -262,6 +267,7 @@
 
     @include Mobile {
         padding: 0 5px;
+        height: 42px;
     }
 }
 
@@ -275,6 +281,10 @@
 
     @include PC {
         display: none;
+    }
+
+    @include Mobile {
+        height: 42px;
     }
 }
 

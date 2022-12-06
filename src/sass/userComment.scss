@@ -63,6 +63,10 @@
     margin-left: 10px;
     display: flex;
     align-items: center;
+
+    @include Mobile {
+        margin-left: 0;
+    }
 }
 
 .who-follow-user-text-interact {
