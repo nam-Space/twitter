@@ -6,6 +6,10 @@
     align-items: flex-start;
     border-bottom: 1px solid var(--border-color);
 
+    @include Mobile {
+        padding-bottom: 6px;
+    }
+
     .status-wrapper-img {
         width: 48px;
         height: 48px;
@@ -78,6 +82,10 @@
     align-items: center;
     border-top: 1px solid var(--border-color);
     padding-top: 16px;
+
+    @include Mobile {
+        padding-top: 6px;
+    }
 }
 
 .img-icon {
@@ -91,6 +99,11 @@
     border-radius: 50%;
     transition: all linear 0.15s;
     cursor: pointer;
+
+    @include Mobile {
+        height: 44px;
+        width: 44px;
+    }
 }
 
 .upload-status-img:hover {
@@ -105,6 +118,10 @@
     font-size: 1.6rem;
     font-weight: 700;
     border-radius: 20px;
+
+    @include Mobile {
+        height: 46px;
+    }
 }
 
 .btn-upload-status.disable {

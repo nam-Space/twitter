@@ -8,14 +8,19 @@
     width: 25%;
     padding-top: 10px;
     padding-bottom: 20px;
-    padding-right: 50px;
-    padding-left: calc(25% - 180px - 50px);
+    padding-right: 40px;
+    // padding-left: calc(25% - 180px - 50px);
     font-size: 2rem;
     border-right: 1px solid var(--border-color);
     height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: flex-end;
+
+    @include PC {
+        padding-right: 25px;
+    }
 
     @include Tablet_and_Mobile {
         padding-left: 10px;
@@ -91,20 +96,39 @@
 }
 
 .sidebar-wrapper {
-    width: 180px;
+    width: 200px;
 
     @include Tablet_and_Mobile {
         width: 60px;
     }
 }
 
-.sidebar-wrapper:first-child
-    .sidebar-page:not(.sidebar-page:first-child):hover {
-    background-color: var(--border-color);
+.sidebar-page .link {
+    width: max-content;
+    transition: all linear 0.2s;
+    border-radius: 40px;
+    padding: 0 20px 0 10px;
+
+    @include Tablet_and_Mobile {
+        padding: 0;
+    }
+
+    &:hover {
+        background: var(--border-color);
+    }
 }
 
-.sidebar-wrapper:not(.sidebar-wrapper:first-child) .sidebar-page:hover {
-    background-color: var(--border-color);
+.sidebar-page:first-child .link {
+    padding: 0;
+    margin-left: 10px;
+
+    @include Tablet_and_Mobile {
+        margin-left: 0;
+    }
+
+    &:hover {
+        background-color: rgb(224, 243, 255);
+    }
 }
 
 .link {
