@@ -58,7 +58,8 @@
 
 .who-follow-user-text-wrapper .who-follow-user-text-content {
     height: 16px;
-    width: 16px;
+    // width: 16px;
+    width: fit-content;
     flex: 1;
     margin-left: 10px;
     display: flex;
