@@ -17,16 +17,25 @@ import CurrentUserComment from "../User/CurrentUserComment";
 import { Link } from "react-router-dom";
 
 const Post = ({ post }) => {
-    const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+    let currentUser = JSON.parse(localStorage.getItem("currentUser"));
     const users = useSelector((state) => state.users);
     const likes = useSelector((state) => state.likes);
     const comments = useSelector((state) => state.comments);
 
-    const user = users.find((user) => user.email === currentUser.email);
+    // const user = users.find((user) => user.email === currentUser.email);
+
+    currentUser = users.find((user) => user.email === currentUser.email);
+
+    // const likeSelected = likes.find(
+    //     (like) => like.user_id === user?.id && like.post_id === post?.id
+    // );
+
+    const user = users.find((user) => user.id === post?.user_id);
 
     const likeSelected = likes.find(
-        (like) => like.user_id === user?.id && like.post_id === post?.id
+        (like) => like.user_id === currentUser?.id && like.post_id === post?.id
     );
+
     const postLikes = likes.filter((like) => like.post_id === post?.id);
 
     const commentsPost = comments.filter(
@@ -49,7 +58,8 @@ const Post = ({ post }) => {
         if (!likeSelected) {
             dispatch(
                 increaseLike({
-                    user_id: user.id,
+                    // user_id: user.id,
+                    user_id: currentUser.id,
                     post_id: post.id,
                 })
             );
@@ -69,7 +79,7 @@ const Post = ({ post }) => {
             <div>
                 <Link to={`/profile/${post?.user_id}`}>
                     <Img
-                        url={post.avatar_url}
+                        url={user?.user_img}
                         className="home-post-user-avatar"
                     />
                 </Link>
@@ -79,13 +89,13 @@ const Post = ({ post }) => {
                     <div className="home-post-user-info">
                         <p className="home-post-user-username">
                             <Link to={`/profile/${post?.user_id}`}>
-                                {post.user_name}
+                                {user?.user_name}
                             </Link>
                         </p>
 
                         <p className="home-post-user-nickname">
                             <Link to={`/profile/${post?.user_id}`}>
-                                @{post.nick_name}
+                                @{user?.nick_name}
                             </Link>
                         </p>
                         <p className="home-post-user-dot">.</p>
@@ -151,13 +161,12 @@ const Post = ({ post }) => {
                             users={users}
                             comment={comment}
                             comments={comments}
-                            user={user}
                         />
                     ))}
 
                     <CurrentUserComment
                         post={post}
-                        user={user}
+                        currentUser={currentUser}
                         users={users}
                         action="comment"
                     />

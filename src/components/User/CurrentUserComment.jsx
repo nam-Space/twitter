@@ -6,7 +6,12 @@ import { ImageIcon } from "../../assets/icons/Icon";
 import { useDispatch } from "react-redux";
 import { setComments } from "../../redux/thunk";
 
-const CurrentUserComment = ({ post, user, action, writeResponseRef }) => {
+const CurrentUserComment = ({
+    post,
+    currentUser,
+    action,
+    writeResponseRef,
+}) => {
     const [inputValue, setInputValue] = useState("");
 
     const dispatch = useDispatch();
@@ -26,7 +31,7 @@ const CurrentUserComment = ({ post, user, action, writeResponseRef }) => {
                 dispatch(
                     setComments({
                         post_id: post.id,
-                        user_id: user.id,
+                        user_id: currentUser.id,
                         content: inputValue,
                         ancestor_id: 0,
                         time: time,
@@ -51,7 +56,7 @@ const CurrentUserComment = ({ post, user, action, writeResponseRef }) => {
             <div className="current-user-comment-avatar">
                 <Img
                     className="current-user-comment-avatar-img"
-                    url={user?.user_img}
+                    url={currentUser?.user_img}
                 />
             </div>
             <div className="current-user-comment-input-img">

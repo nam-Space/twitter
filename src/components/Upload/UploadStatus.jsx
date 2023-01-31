@@ -64,10 +64,6 @@ const UploadStatus = () => {
             const user = users.find((user) => user.email === currentUser.email);
             dispatch(
                 uploadPost({
-                    email: currentUser?.email,
-                    user_name: currentUser?.user_name,
-                    nick_name: currentUser?.nick_name,
-                    avatar_url: currentUser?.user_img,
                     title: valueStatus,
                     img_url: urlImage,
                     time: Date.now(),

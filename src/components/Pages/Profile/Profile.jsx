@@ -132,7 +132,6 @@ const Profile = () => {
         currentUser?.user_name,
         currentUser?.background_url,
         currentUser?.user_img,
-        modalEditProfile,
         nameEdit,
     ]);
 
