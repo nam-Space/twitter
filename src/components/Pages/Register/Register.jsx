@@ -10,7 +10,7 @@ import { getUsers, setUsers } from "../../../redux/thunk";
 import { ImageIcon } from "../../../assets/icons/Icon";
 
 const Register = () => {
-    const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+    let currentUser = JSON.parse(localStorage.getItem("currentUser"));
     const users = useSelector((state) => state.users);
 
     const emails = users.map((user) => user.email);
@@ -103,6 +103,13 @@ const Register = () => {
         delete user.password;
         delete user.confirm_password;
 
+        dispatch(
+            setUsers({
+                ...values,
+                date_register: dateRegister,
+            })
+        );
+
         localStorage.setItem(
             "currentUser",
             JSON.stringify({
@@ -112,12 +119,6 @@ const Register = () => {
             })
         );
 
-        dispatch(
-            setUsers({
-                ...values,
-                date_register: dateRegister,
-            })
-        );
         navigate("/");
     };
 

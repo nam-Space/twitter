@@ -232,6 +232,7 @@
 .user-info-signout-icon {
     width: 20px;
     height: 20px;
+    display: flex;
 
     @include PC_and_Tablet {
         display: none;

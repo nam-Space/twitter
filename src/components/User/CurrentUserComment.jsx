@@ -1,17 +1,20 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Img from "../Img/Img";
 
 import "../../sass/currentUserComment.scss";
 import { ImageIcon } from "../../assets/icons/Icon";
-import { useDispatch } from "react-redux";
-import { setComments } from "../../redux/thunk";
+import { useDispatch, useSelector } from "react-redux";
+import { getUsers, setComments } from "../../redux/thunk";
+const CurrentUserComment = ({ post, writeResponseRef }) => {
+    let currentUser = JSON.parse(localStorage.getItem("currentUser"));
+    const users = useSelector((state) => state.users);
 
-const CurrentUserComment = ({
-    post,
-    currentUser,
-    action,
-    writeResponseRef,
-}) => {
+    currentUser = users.find((user) => user.email === currentUser?.email);
+
+    useEffect(() => {
+        dispatch(getUsers());
+    }, []);
+
     const [inputValue, setInputValue] = useState("");
 
     const dispatch = useDispatch();
@@ -45,14 +48,7 @@ const CurrentUserComment = ({
     };
 
     return (
-        <div
-            ref={writeResponseRef}
-            className={`${
-                action === "reply"
-                    ? "current-user-comment hide"
-                    : "current-user-comment"
-            } `}
-        >
+        <div ref={writeResponseRef} className="current-user-comment">
             <div className="current-user-comment-avatar">
                 <Img
                     className="current-user-comment-avatar-img"

@@ -143,10 +143,10 @@
     padding: 0 16px;
     border-radius: 20px;
 
-    @include Mobile {
-        height: 46px;
-        border-radius: 10px;
-    }
+    // @include Mobile {
+    //     height: 46px;
+    //     border-radius: 10px;
+    // }
 }
 
 .edit-modal-bg {

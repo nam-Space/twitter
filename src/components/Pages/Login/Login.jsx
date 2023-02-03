@@ -8,6 +8,18 @@ import { useDispatch, useSelector } from "react-redux";
 import { getUsers } from "../../../redux/thunk";
 
 const Login = () => {
+    // let date = new Date(Date.now());
+    // console.log(date.toUTCString());
+    // date.setDate(date.getDate() + 5);
+    // console.log(date.toUTCString());
+    // const ai = { name: "Nam", age: "18" };
+
+    // document.cookie = `name=hai; expires=${new Date(
+    //     "2022-06-25 10:00:00"
+    // ).toUTCString()}`;
+
+    // console.log(document.cookie);
+
     const [form, setForm] = useState({
         email: "",
         password: "",

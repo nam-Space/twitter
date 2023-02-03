@@ -22,13 +22,7 @@ const Post = ({ post }) => {
     const likes = useSelector((state) => state.likes);
     const comments = useSelector((state) => state.comments);
 
-    // const user = users.find((user) => user.email === currentUser.email);
-
     currentUser = users.find((user) => user.email === currentUser.email);
-
-    // const likeSelected = likes.find(
-    //     (like) => like.user_id === user?.id && like.post_id === post?.id
-    // );
 
     const user = users.find((user) => user.id === post?.user_id);
 
@@ -52,13 +46,12 @@ const Post = ({ post }) => {
         dispatch(getUsers());
         dispatch(getLikes());
         dispatch(getComments());
-    }, [users.length, likes.length, comments.length]);
+    }, [likes.length, comments.length]);
 
     const handleLike = (e) => {
         if (!likeSelected) {
             dispatch(
                 increaseLike({
-                    // user_id: user.id,
                     user_id: currentUser.id,
                     post_id: post.id,
                 })
@@ -155,21 +148,10 @@ const Post = ({ post }) => {
                     className="home-post-comment-for-user"
                 >
                     {commentsPost.map((comment, index) => (
-                        <UserComment
-                            key={index}
-                            post={post}
-                            users={users}
-                            comment={comment}
-                            comments={comments}
-                        />
+                        <UserComment key={index} comment={comment} />
                     ))}
 
-                    <CurrentUserComment
-                        post={post}
-                        currentUser={currentUser}
-                        users={users}
-                        action="comment"
-                    />
+                    <CurrentUserComment post={post} />
                 </div>
             </div>
         </div>

@@ -17,14 +17,13 @@ import {
 import "../../sass/sidebar.scss";
 import Modal from "react-modal";
 import Img from "../Img/Img";
-import { useDispatch, useSelector } from "react-redux";
-import { getCurrentUser, getUsers, signOut } from "../../redux/thunk";
 
 import Tippy from "@tippyjs/react";
 import "tippy.js/dist/tippy.css";
 import "tippy.js/themes/light.css";
-import UploadStatus from "../Upload/UploadStatus";
 import UploadStatusSidebar from "../Upload/UploadStatusSideBar";
+import { useDispatch, useSelector } from "react-redux";
+import { getUsers } from "../../redux/thunk";
 
 const Sidebar = () => {
     let currentUser = JSON.parse(localStorage.getItem("currentUser"));

@@ -52,7 +52,7 @@ const Profile = () => {
         } else {
             dispatch(
                 setFollow({
-                    user_id: currentUser.id,
+                    user_id: currentUser?.id,
                     user_id_following: user.id,
                 })
             );

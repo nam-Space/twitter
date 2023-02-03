@@ -5,10 +5,14 @@ import "../../sass/uploadStatus.scss";
 import { ArrowDown, ImageIcon } from "../../assets/icons/Icon";
 import { useDispatch, useSelector } from "react-redux";
 import { getUsers, uploadPost } from "../../redux/thunk";
+import { Link } from "react-router-dom";
 
 const UploadStatus = () => {
-    const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+    let currentUser = JSON.parse(localStorage.getItem("currentUser"));
     const users = useSelector((state) => state.users);
+
+    currentUser = users.find((user) => user.email === currentUser?.email);
+
     const [valueStatus, setValueStatus] = useState("");
     const [urlImage, setUrlImage] = useState("");
     const buttonPost = useRef();
@@ -61,13 +65,12 @@ const UploadStatus = () => {
 
     const handleSubmit = (e) => {
         if (valueStatus || urlImage) {
-            const user = users.find((user) => user.email === currentUser.email);
             dispatch(
                 uploadPost({
                     title: valueStatus,
                     img_url: urlImage,
                     time: Date.now(),
-                    user_id: user.id,
+                    user_id: currentUser?.id,
                 })
             );
             setValueStatus("");
@@ -79,7 +82,14 @@ const UploadStatus = () => {
 
     return (
         <div className="status-wrapper">
-            <Img url={currentUser?.user_img} className="status-wrapper-img" />
+            <div>
+                <Link to={`/profile/${currentUser?.id}`}>
+                    <Img
+                        url={currentUser?.user_img}
+                        className="status-wrapper-img"
+                    />
+                </Link>
+            </div>
             <div className="upload-wrapper">
                 <button className="access-modifier-btn">
                     <div className="access-modifier">

@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { getFollows, getPosts } from "../../../redux/thunk";
+import { getFollows, getPosts, getUsers } from "../../../redux/thunk";
 
 import "../../../sass/home.scss";
 import Post from "../../Post/Post";
@@ -18,6 +18,7 @@ const Home = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
+        dispatch(getUsers());
         dispatch(getPosts());
         dispatch(getFollows());
 
